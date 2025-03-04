@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button_submit;
     EditText editText_item;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         ArrayList<DataItem> dataList = new ArrayList<>();
-        for(int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             dataList.add(new DataItem(String.valueOf(i)));
-    }
+        }
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MyAdapter adapter = new MyAdapter(dataList, this);
+        recyclerView.setAdapter(adapter);
+    }
 }
