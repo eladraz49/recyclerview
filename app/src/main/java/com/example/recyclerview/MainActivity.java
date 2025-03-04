@@ -38,5 +38,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MyAdapter adapter = new MyAdapter(dataList, this);
         recyclerView.setAdapter(adapter);
+
+
     }
 }

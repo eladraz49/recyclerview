@@ -31,6 +31,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Toast.makeText(view.getContext(), text, Toast.LENGTH_SHORT).show();
             }
         });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int p = holder.getAdapterPosition();
+                removeMyAdapter(p);
+                notifyItemRemoved(p);
+            }
+        });
+    }
+    public void removeMyAdapter(int i){
+        dataItems.remove(i);
     }
 
     @Override
