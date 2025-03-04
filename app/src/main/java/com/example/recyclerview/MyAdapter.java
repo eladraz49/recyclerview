@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @NonNull
     @Override
@@ -33,7 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return dataItems.Length;
+        return dataItems.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -46,10 +48,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             editText_item = itemView.findViewById(R.id.editText_item);
         }
     }
-    private DataItem[] dataItems;
+    private ArrayList<DataItem> dataItems;
     private Context context;
 
-    public MyAdapter(DataItem[] dataItems, Context context) {
+    public MyAdapter(ArrayList<DataItem>  dataItems, Context context) {
         this.dataItems = dataItems;
         this.context = context;
     }
